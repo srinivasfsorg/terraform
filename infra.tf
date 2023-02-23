@@ -101,8 +101,8 @@ resource "aws_security_group" "mysg" {
 }
 
 # Step 2
-resource "aws_key_pair" "mykp" {
-  key_name   = "mykp"
+resource "aws_key_pair" "my" {
+  key_name   = "my"
   public_key = var.mypublickey
 }
 
@@ -112,7 +112,7 @@ resource "aws_instance" "jenkins" {
   ami           = var.myami
   associate_public_ip_address = "true"
   vpc_security_group_ids = [aws_security_group.mysg.id]
-  key_name = "mykp"
+  key_name = "my"
   subnet_id = aws_subnet.mysubnet.id
   instance_type = "t2.micro"
   tags = {
@@ -125,7 +125,7 @@ resource "aws_instance" "artifactory" {
   ami           = var.myami
   associate_public_ip_address = "true"
   vpc_security_group_ids = [aws_security_group.mysg.id]
-  key_name = "mykp"
+  key_name = "my"
   subnet_id = aws_subnet.mysubnet.id
   instance_type = "t2.medium"
   tags = {
@@ -138,7 +138,7 @@ resource "aws_instance" "webapp" {
   ami           = var.myami
   associate_public_ip_address = "true"
   vpc_security_group_ids = [aws_security_group.mysg.id]
-  key_name = "mykp"
+  key_name = "my"
   subnet_id = aws_subnet.mysubnet.id
   instance_type = "t2.micro"
   tags = {
