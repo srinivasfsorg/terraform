@@ -5,7 +5,7 @@ $ssh-keygen
 # Execution Flow
 Step 1: Clone the terraform repo
 
-$git clone https://github.com/akhilvaka2/Terraform.git && cd Terraform
+$git clone https://github.com/srinivasfsorg/terraform.git && cd Terraform
 
 Step 2: add public key in keypair resource
 
